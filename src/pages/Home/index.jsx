@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { YinYang } from '../../components/AllSvgs';
+import Intro from '../../components/Intro';
 import Logo from '../../components/Logo';
 import PowerButton from '../../components/PowerButton';
 import SocialIcons from '../../components/SocialIcons';
@@ -152,6 +153,7 @@ const Home = () => {
                     </SKILLS>
                 </BottomBar>                 
             </Container>
+            {click ? <Intro click={click} /> : null}
         </MainContainer>
     );
 };
