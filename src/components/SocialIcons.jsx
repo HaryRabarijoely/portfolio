@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Facebook, Github, Twitter } from './AllSvgs'
+import { DarkTheme } from './Themes'
 
 
 
@@ -23,28 +24,28 @@ const Icons = styled.div`
 const Line = styled.span`
     width: 3px;
     height: 8rem;
-    background-color: ${props => props.theme.text};
+    background-color: ${props => props.color === 'dark' ? DarkTheme.text : DarkTheme.body};
 `
 
-const SocialIcons = () => {
+const SocialIcons = (props) => {
   return (
     <Icons>
         <div>
             <a style={{color:'inherit'}} target="_blank" href="https://github.com/HaryRabarijoely" rel="noreferrer">
-                <Github width={25} height={25} fill='currentColor' />
+                <Github width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body} />
             </a>
         </div>
         <div>
             <a style={{color:'inherit'}} target="_blank" href="https://github.com/HaryRabarijoely" rel="noreferrer">
-                <Twitter width={25} height={25} fill='currentColor' />
+                <Twitter width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body} />
             </a>
         </div>
         <div>
             <a style={{color:'inherit'}} target="_blank" href="https://github.com/HaryRabarijoely" rel="noreferrer">
-                <Facebook width={25} height={25} fill='currentColor' />
+                <Facebook width={25} height={25} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body} />
             </a>
         </div>
-        <Line />
+        <Line color={props.theme} />
     </Icons>
   )
 }
