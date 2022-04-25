@@ -79,7 +79,8 @@ const Intro = () => {
             <Text>
                 <h1>Salut!</h1>
                 <h3>Moi c'est Hary</h3>
-                <h6>Je suis développeur web fullstack Ruby-On-Rails et ReactJS</h6>
+                <h5>Développeur web fullstack </h5>
+                <h6>Ruby-On-Rails et ReactJS</h6>
             </Text>
         </SubBox>
         <SubBox>
