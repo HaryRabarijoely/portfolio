@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
@@ -7,6 +8,7 @@ import Logo from '../../components/Logo';
 import PowerButton from '../../components/PowerButton';
 import SocialIcons from '../../components/SocialIcons';
 import Contact from '../Contact';
+;
 
 const MainContainer = styled.div`
     background: ${props => props.theme.body};
@@ -131,25 +133,37 @@ const Home = () => {
                 </Center>
                 <Contact />
                 <BLOG to="/blog">
-                    <h2>
+                    <motion.h2
+                        whileHover={{scale: 1.1}}
+                        whileTap={{scale: 0.9}}
+                    >
                         Blog
-                    </h2>
+                    </motion.h2>
                 </BLOG>    
                 <WORK to="/work" click={click}>
-                    <h2>
+                    <motion.h2
+                        whileHover={{scale: 1.1}}
+                        whileTap={{scale: 0.9}}
+                    >
                         Work
-                    </h2>
+                    </motion.h2>
                 </WORK>
                 <BottomBar>
                     <ABOUT to="/about" click={click}>
-                        <h2>
+                        <motion.h2
+                            whileHover={{scale: 1.1}}
+                            whileTap={{scale: 0.9}}
+                        >
                             About
-                        </h2>
+                        </motion.h2>
                     </ABOUT>
                     <SKILLS to="/skill">
-                        <h2>
+                        <motion.h2
+                            whileHover={{scale: 1.1}}
+                            whileTap={{scale: 0.9}}
+                        >
                             Skill
-                        </h2>
+                        </motion.h2>
                     </SKILLS>
                 </BottomBar>                 
             </Container>

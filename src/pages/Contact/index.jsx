@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
+;
 
 
 const Main = styled.h3`
@@ -15,9 +17,12 @@ const Contact = () => {
   return (
     <Main>
         <a style={{color:'inherit'}} href="mailto:rabonia@hotmail.com" target="_blank" rel="noopener noreferrer">
-            <h3>
+            <motion.h3
+              whileHover={{scale: 1.1}}
+              whileTap={{scale: 0.9}}
+            >
                 Fait coucou....
-            </h3>
+            </motion.h3>
         </a>
     </Main>
   )
