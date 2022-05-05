@@ -21,7 +21,7 @@ const Contact = () => {
               whileHover={{scale: 1.1}}
               whileTap={{scale: 0.9}}
             >
-                Fait coucou....
+                Contactez-moi...
             </motion.h3>
         </a>
     </Main>
