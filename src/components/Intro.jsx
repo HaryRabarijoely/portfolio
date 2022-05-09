@@ -80,7 +80,7 @@ const Intro = () => {
                 <h1>Salut!</h1>
                 <h3>Moi c'est Hary</h3>
                 <h5>Développeur web fullstack </h5>
-                <h6>Ruby-On-Rails et ReactJS</h6>
+                <h5>Ruby-On-Rails et ReactJS</h5>
             </Text>
         </SubBox>
         <SubBox>
