@@ -16,6 +16,12 @@ const Box = styled(NavLink)`
     display: flex;
     flex-direction: column;
     z-index:5;
+
+    &:hover{
+        color: ${props => props.theme.body};
+        background-color: ${props => props.theme.text};
+        transition: all 0.3s ease;
+    }
 `
 
 const Image = styled.div`
@@ -25,6 +31,10 @@ const Image = styled.div`
     background-size: cover;
     border: 1px solid transparent;
     backgroud-position: center center;
+
+    ${Box}:hover &{
+        border: 1px solid ${props => props.theme.body}
+    }
 `
 const Title = styled.h3`
     color: inherit;
@@ -33,6 +43,10 @@ const Title = styled.h3`
     font-family: 'Karla',sans-sherif;
     font-weight: 700;
     border-bottom: 1px solid ${props => props.theme.text};
+
+    ${Box}:hover &{
+        border-bottom: 1px solid ${props => props.theme.body}
+    }
 `
 
 const HashTags = styled.div`
