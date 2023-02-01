@@ -30,7 +30,7 @@ const Image = styled.div`
     height: 60%;
     background-size: cover;
     border: 1px solid transparent;
-    backgroud-position: center center;
+    background-position: center center;
 
     ${Box}:hover &{
         border: 1px solid ${props => props.theme.body}
