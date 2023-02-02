@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import styled from 'styled-components';
 import {DarkTheme} from '../../components/Themes';
@@ -8,6 +8,7 @@ import SocialIcons from '../../components/SocialIcons';
 import {WorkData} from '../../datas/WorkDatas';
 import Card from '../../components/Card';
 import { useRef } from 'react';
+import { YinYang } from '../../components/AllSvgs';
 
 
 const Box = styled.div`
@@ -28,10 +29,32 @@ const Main = styled.ul`
     color: white;
 `
 
+const Rotate = styled.span`
+    display: block;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 80px;
+    height: 80px;
+    z-index: 1;
+`
+
 
 const Work = () => {
 
     const ref = useRef(null);
+    const yinyang = useRef(null);
+
+    useEffect(() => {
+        let element = ref.current;
+        const rotate = () => {
+            element.style.transform = `translateX(${-window.pageYOffset}px)`
+            yinyang.current.style.transform = 'rotate(' + -window.pageYOffset + 'deg)'
+        }
+        window.addEventListener('scroll', rotate)
+        return () => window.removeEventListener('scroll', rotate)
+    }, [])
+    
 
     return (
         <ThemeProvider theme={DarkTheme}>
@@ -45,7 +68,10 @@ const Work = () => {
                             <Card key={d.id} data={d} />    
                         )
                     }
-                </Main>              
+                </Main>
+                <Rotate ref={yinyang}>
+                    <YinYang width={80} height={80} fill={DarkTheme.text} />
+                </Rotate>              
             </Box>
         </ThemeProvider>
         
